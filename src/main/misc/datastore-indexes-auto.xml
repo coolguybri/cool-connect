@@ -1,0 +1,3 @@
+<datastore-index kind="PulseClientOutage" ancestor="true" source="manual">
+        <property name="startTime" direction="desc"/>
+</datastore-index>
