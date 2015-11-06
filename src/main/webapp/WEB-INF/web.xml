@@ -20,6 +20,20 @@
     	<servlet-name>admin</servlet-name>
     	<url-pattern>/admin</url-pattern>
   	</servlet-mapping>
+  	
+  	<!-- api handler -->
+  	<servlet>
+    	<servlet-name>api</servlet-name>
+   		<servlet-class>com.coolguybri.coolconnect.server.ApiServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>api</servlet-name>
+    	<url-pattern>/api</url-pattern>
+  	</servlet-mapping>
+  	<servlet-mapping>
+    	<servlet-name>api</servlet-name>
+    	<url-pattern>/api/*</url-pattern>
+  	</servlet-mapping>
   
   	<!-- Add the ObjectifyFilter for all urls, so all handlers have access to the db. -->
 	<filter>

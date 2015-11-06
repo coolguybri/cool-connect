@@ -44,6 +44,12 @@
     		<artifactId>objectify</artifactId>
     		<version>4.0.1</version>
 		</dependency>
+		<dependency>
+		  	<groupId>com.google.code.gson</groupId> <!--  Gson: Java to Json conversion -->
+		  	<artifactId>gson</artifactId>
+		  	<version>2.4</version>
+		  	<scope>compile</scope>
+		</dependency>
 
 
         <!-- Test Dependencies -->
