@@ -1,0 +1,60 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    background-color: #E18209;
+}
+
+#mega-container {
+	padding: 8px;
+}
+
+
+	
+.card-container {
+	width: 95%;
+	background-color: #f8AD16;
+	/*margin: 10px auto; */
+	/* padding: 10px;
+	border: 2px;
+	border-color: #ffffff; */
+	/*position: absolute; */
+	/*left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%);*/
+    padding: 4px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 8px;
+    margin-top: 8px;
+	border-radius: 4px;
+	color: #fcdc0a;
+	text-align: center;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#title-container {
+}
+
+#title {
+    font-size: 18px;
+	color: #fcee97;
+	margin: 0px auto;
+}
+
+.app-title {
+	font-size: 22px;
+	color: white;
+}
+
+#outage-container {
+}
+
+#clients-controller {
+	height: 80%;
+}
+
+#outages-timeline {
+	background-color: #fcdc0a;
+	border-radius: 10px;
+	height: auto;
+}

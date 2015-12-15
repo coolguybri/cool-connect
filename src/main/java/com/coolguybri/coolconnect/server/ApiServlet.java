@@ -120,6 +120,7 @@ public class ApiServlet extends HttpServlet
 		
 		public ClientListResponse()
 		{
+			// "2012-04-23T18:25:43.511Z"
 			df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mmZ");
 			df.setTimeZone(TimeZone.getTimeZone("UTC"));
 			clients = new Vector();
@@ -148,6 +149,7 @@ public class ApiServlet extends HttpServlet
 		
 		Response rr = new Response(r);
 		resp.getWriter().println(gson.toJson(rr));
+		System.out.println("ApiServlet:processClientList: " + gson.toJson(rr));
     }
     
 			
@@ -210,6 +212,7 @@ public class ApiServlet extends HttpServlet
     	
     	Response rr = new Response(r);
 		resp.getWriter().println(gson.toJson(rr));	
+		System.out.println("ApiServlet:processOutageList: " + gson.toJson(rr));
     }
     
     
@@ -242,5 +245,6 @@ public class ApiServlet extends HttpServlet
 		Gson gson = new Gson();
 		Response rr = new Response(mesg);
 		resp.getWriter().println(gson.toJson(rr));
+		System.out.println("ApiServlet:sendError: " + gson.toJson(rr));
 	}
 }

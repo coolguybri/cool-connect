@@ -27,10 +27,10 @@ public class PulseAgent
 	String 	agentName;
 	String	serverUrl;
 	int		intervalMillis;
-	int		failureCount;
-	int		failureCountTotal;
+	int		failureCount;			// number of consecutive failures
+	int		failureCountTotal;		// total failure pulses
+	int		pulseCount;				// total successful pulses
 	Timer 	timer;
-	
 	
 	/* nested class: our timer task. */
 	class PulseTask extends TimerTask 
@@ -81,6 +81,7 @@ public class PulseAgent
     	intervalMillis = ival;
     	failureCount = 0;
     	failureCountTotal = 0;
+    	pulseCount = 0;
     	
     	/* register our first timer. */
         timer = new Timer();
@@ -95,9 +96,10 @@ public class PulseAgent
     {
     	try
     	{
-    		/* build the query string. */
+    		/* build the query string, and increment the pulse count. */
     		String encoder = "UTF-8";
-    		String query = "?client=" + URLEncoder.encode(agentName, encoder) + "&interval=" + (intervalMillis / 1000);
+    		String query = "?client=" + URLEncoder.encode(agentName, encoder) + "&interval=" + (intervalMillis / 1000) 
+    			+ "&pulse=" + pulseCount + "&failures=" + failureCount;
     	
     		/* synchronously open the connection. */
     		System.out.println("connecting to \"" + serverUrl + query + "\"...");	
@@ -126,6 +128,7 @@ public class PulseAgent
         /* if we got here, we are cool. */
         System.out.println("pulse successful");
         failureCount = 0;
+        pulseCount++;
         return true;
     }
     
