@@ -74,6 +74,21 @@
 		console.log("viz: eraseDataTable complete");
 	};
 	
+	/* */
+	function getWeekLabel(currWeek) {
+		if (currWeek == 0) {
+			weekName = 'this week';
+		} else if (currWeek == -1) {
+			weekName = 'last week';
+		} else if (currWeek == -1) {
+			weekName = 'week before last';
+		} else if (currWeek == -2) {
+			weekName = 'like, 3 weeks ago';
+		} else {
+			weekName = 'week ' + currWeek;
+		}
+		return weekName;
+	}
 	
 	/* called on page load. */
 	function updateGraph(graphElemName, outages) {
@@ -98,7 +113,7 @@
 		/* now add the appropriate rows. */
 		var currWeek = 0;
 		var maxWeek = -3;
-		var weekName = 'current';
+		var weekName = getWeekLabel(currWeek);
 		for (var currOutage = 0 ; (currOutage < outages.outages.length) ; currOutage++) {
 		
 			var startDate = new Date(outages.outages[currOutage].startTime);
@@ -109,7 +124,7 @@
 			while ((currWeek >= maxWeek) && (startDate < curr_week_begin)) {
 				/* update the beginning of the week. */
 				currWeek--;
-				weekName = 'week ' + currWeek;
+				weekName = getWeekLabel(currWeek);
 				curr_week_begin.setDate(curr_week_begin.getDate() - 7);
 				console.log("processing outage " + currOutage + ", hit new week-begin (" + currWeek + ")(" + weekName + ") of " + curr_week_begin);
 			}

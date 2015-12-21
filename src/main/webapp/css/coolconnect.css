@@ -8,8 +8,6 @@ body {
 	padding: 8px;
 }
 
-
-	
 .card-container {
 	width: 95%;
 	background-color: #f8AD16;
@@ -50,11 +48,12 @@ body {
 }
 
 #clients-controller {
-	height: 80%;
+	/* height: 80%; */
+	height: auto;
 }
 
 #outages-timeline {
-	background-color: #fcdc0a;
-	border-radius: 10px;
-	height: auto;
+	/* background-color: #fcdc0a;	*/
+	/* height: auto; */
+	height: 250px;
 }

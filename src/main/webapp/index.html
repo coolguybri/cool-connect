@@ -13,12 +13,14 @@
 	
 	<body>
 		<div id="mega-container">
+		
+			<!-- title -->
 			<div id="title-container" class="card-container">
 				<span id="title"><span class="app-title">cool-connect:</span> current outage report</span>
 			</div>
 		
+			<!-- client list -->
 			<div id="outage-container" class="card-container">
-		
 				<div id="clients-controller" ng-controller="ClientsController as clientList">
 					<div id="clients-list" class="list-group">
 						<button type="button" class="list-group-item" ng-repeat="client in clientList.clients" ng-click="clientList.updateOutages(client.name);">
@@ -26,9 +28,11 @@
 						</button>
 					</div>
 				</div>
+			</div>
 		
-				<!-- graph of outages. */ -->
-				<div id="outages-timeline"></div>
+			<!-- graph of outages. */ -->
+			<div id="outages-timeline" class="card-container">
+			</div>
 			
 				<!-- div id="outages-controller" ng-controller="OutagesController as outageList">
 					<table class="table table-hover">
@@ -37,7 +41,6 @@
 						</tr>
 					</table 
 				</div -->
-			</div>
 		</div>
 	</body>
 </html>
